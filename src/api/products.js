@@ -1,10 +1,7 @@
-// API para productos (simulada)
+// API para productos reales
 export const fetchProducts = async (filters = {}) => {
-  // Simular delay de API
-  await new Promise(resolve => setTimeout(resolve, 500));
-  
-  // En producción, esto sería una llamada real a la API
-  const response = await fetch('/api/products', {
+  const API_BASE_URL = window.location.origin;
+  const response = await fetch(`${API_BASE_URL}/api/products.php`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -20,9 +17,8 @@ export const fetchProducts = async (filters = {}) => {
 };
 
 export const fetchProductById = async (id) => {
-  await new Promise(resolve => setTimeout(resolve, 300));
-  
-  const response = await fetch(`/api/products/${id}`);
+  const API_BASE_URL = window.location.origin;
+  const response = await fetch(`${API_BASE_URL}/api/products.php?id=${id}`);
   
   if (!response.ok) {
     throw new Error('Product not found');
@@ -32,9 +28,14 @@ export const fetchProductById = async (id) => {
 };
 
 export const searchProducts = async (query) => {
-  await new Promise(resolve => setTimeout(resolve, 400));
-  
-  const response = await fetch(`/api/products/search?q=${encodeURIComponent(query)}`);
+  const API_BASE_URL = window.location.origin;
+  const response = await fetch(`${API_BASE_URL}/api/products.php`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ search: query })
+  });
   
   if (!response.ok) {
     throw new Error('Search failed');
