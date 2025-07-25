@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
+import { mockApiCall } from '../api/mockApi';
 
 const ProductContext = createContext();
 
@@ -98,10 +99,6 @@ const initialState = {
   selectedProduct: null
 };
 
-// API endpoint para productos
-const API_BASE_URL = window.location.origin;
-const PRODUCTS_API_URL = `${API_BASE_URL}/api/products.php`;
-
 export const ProductProvider = ({ children }) => {
   const [state, dispatch] = useReducer(productReducer, initialState);
 
@@ -119,23 +116,7 @@ export const ProductProvider = ({ children }) => {
         limit: 12
       };
 
-      const response = await fetch(PRODUCTS_API_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(filters)
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const data = await response.json();
-
-      if (!data.success) {
-        throw new Error(data.error || 'Error al cargar productos');
-      }
+      const data = await mockApiCall(filters);
 
       dispatch({ type: 'SET_PRODUCTS', payload: data.products });
       dispatch({ 
