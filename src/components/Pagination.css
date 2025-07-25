@@ -1,0 +1,228 @@
+.pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-2xl);
+  padding: var(--spacing-lg);
+}
+
+.pagination-info {
+  font-size: 0.875rem;
+  color: var(--color-gray-600);
+  font-weight: var(--font-weight-medium);
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.pagination-numbers {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.pagination-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: var(--spacing-sm);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-300);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-700);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.pagination-btn:hover:not(.disabled) {
+  background-color: var(--color-gray-50);
+  border-color: var(--color-gray-400);
+  color: var(--color-black);
+}
+
+.pagination-btn.active {
+  background-color: var(--color-black);
+  border-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.pagination-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-nav {
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.pagination-number {
+  font-weight: var(--font-weight-semibold);
+}
+
+.pagination-ellipsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  color: var(--color-gray-400);
+  font-weight: var(--font-weight-bold);
+}
+
+.nav-text {
+  font-size: 0.875rem;
+}
+
+/* Mobile Pagination */
+.pagination-mobile {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 200px;
+  gap: var(--spacing-md);
+}
+
+.pagination-btn-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-300);
+  border-radius: 50%;
+  color: var(--color-gray-700);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.pagination-btn-mobile:hover:not(.disabled) {
+  background-color: var(--color-gray-50);
+  border-color: var(--color-gray-400);
+  color: var(--color-black);
+}
+
+.pagination-btn-mobile.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-mobile-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: 1rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-black);
+}
+
+.separator {
+  color: var(--color-gray-400);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pagination-controls {
+    display: none;
+  }
+  
+  .pagination-mobile {
+    display: flex;
+  }
+  
+  .pagination-info {
+    order: 2;
+    margin-top: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination {
+    padding: var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+  
+  .nav-text {
+    display: none;
+  }
+  
+  .pagination-nav {
+    min-width: 40px;
+    padding: var(--spacing-sm);
+  }
+}
+
+/* Compact Pagination for smaller screens */
+@media (max-width: 640px) {
+  .pagination-numbers {
+    gap: 2px;
+  }
+  
+  .pagination-btn {
+    min-width: 36px;
+    height: 36px;
+    font-size: 0.75rem;
+  }
+  
+  .pagination-ellipsis {
+    min-width: 36px;
+    height: 36px;
+  }
+}
+
+/* Animation for page transitions */
+.pagination-btn.active {
+  animation: pageActive 0.3s ease-out;
+}
+
+@keyframes pageActive {
+  0% {
+    transform: scale(0.9);
+    background-color: var(--color-gray-100);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    background-color: var(--color-black);
+  }
+}
+
+/* Loading state */
+.pagination.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.pagination.loading .pagination-btn {
+  cursor: wait;
+}
+
+/* Focus states */
+.pagination-btn:focus,
+.pagination-btn-mobile:focus {
+  outline: 2px solid var(--color-black);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .pagination-btn {
+    border-width: 2px;
+  }
+  
+  .pagination-btn.active {
+    border-color: var(--color-black);
+  }
+}

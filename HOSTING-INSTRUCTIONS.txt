@@ -1,0 +1,105 @@
+🚀 INSTRUCCIONES PARA SUBIR AL HOSTING COMPARTIDO
+==================================================
+
+✅ PROYECTO COMPILADO Y LISTO PARA HOSTING
+
+📁 ARCHIVOS A SUBIR:
+-------------------
+Sube ÚNICAMENTE el contenido de la carpeta "dist/" a tu hosting:
+
+1. Ve a tu cPanel o administrador de archivos
+2. Navega a la carpeta "public_html" (o "www" según tu hosting)
+3. Sube TODOS los archivos de la carpeta "dist/":
+   - index.html
+   - carpeta "assets/" (completa)
+   - .htaccess
+   - vite.svg
+   - jorle_logo.png (si existe)
+
+🌐 HOSTINGS COMPATIBLES:
+-----------------------
+✅ Hostinger
+✅ GoDaddy  
+✅ Bluehost
+✅ SiteGround
+✅ Namecheap
+✅ 1&1 IONOS
+✅ Cualquier hosting con Apache/cPanel
+
+⚡ CARACTERÍSTICAS INCLUIDAS:
+---------------------------
+✅ Solo archivos estáticos (no necesita PHP/Node.js)
+✅ Optimizado para velocidad máxima
+✅ Compresión GZIP activada
+✅ Cache del navegador configurado
+✅ Headers de seguridad incluidos
+✅ Responsive completo
+✅ Compatible con móviles
+✅ Selección de tienda para retiro
+✅ Modal de información de tiendas
+✅ Integración WhatsApp mejorada
+
+🔧 CONFIGURACIÓN AUTOMÁTICA:
+---------------------------
+✅ .htaccess incluido y configurado
+✅ Rutas SPA funcionando perfectamente
+✅ Compresión automática de archivos
+✅ Cache optimizado para performance
+✅ Seguridad básica implementada
+
+📞 CONTACTO CONFIGURADO:
+-----------------------
+✅ WhatsApp: +593 93 993 1934
+✅ Integración automática de pedidos
+✅ Formulario de checkout funcional
+✅ Selección de tienda incluida
+
+🎯 FUNCIONALIDADES COMPLETAS:
+----------------------------
+✅ Catálogo de productos premium
+✅ Carrito de compras persistente
+✅ Filtros por tienda, talla, color
+✅ Búsqueda de productos en tiempo real
+✅ Checkout con selección de tienda
+✅ Modal de información de tiendas con:
+   - Foto de la tienda
+   - Dirección exacta
+   - Teléfono con enlace directo
+   - Botón para Google Maps
+   - Horarios de atención
+✅ WhatsApp con información completa
+✅ Diseño premium y profesional
+✅ Animaciones suaves y modernas
+✅ Slider de productos destacados
+
+🏪 TIENDAS CONFIGURADAS:
+-----------------------
+✅ Tienda Gaviota (Centro)
+✅ Tienda Rosales (Norte)  
+✅ Tienda Sauces (Sur)
+
+⏱️ TIEMPO DE SUBIDA: 2-5 minutos
+💰 COSTO: Solo el hosting (no requiere servicios adicionales)
+📱 RESPONSIVE: Funciona perfecto en móviles y tablets
+
+🚨 IMPORTANTE:
+--------------
+- NO subas las carpetas "src/", "node_modules/", etc.
+- SOLO sube el contenido de "dist/"
+- Asegúrate de que index.html esté en la raíz de public_html
+- El archivo .htaccess debe estar en la raíz también
+
+🎉 ¡Tu tienda estará online inmediatamente después de subir los archivos!
+
+✨ NUEVAS CARACTERÍSTICAS AGREGADAS:
+----------------------------------
+🏪 Selección de tienda para retiro
+📍 Modal con información completa de tiendas
+🗺️ Integración con Google Maps
+📱 Enlaces directos para llamar
+💬 WhatsApp con datos de tienda seleccionada
+
+Para soporte: Revisa que todos los archivos se hayan subido correctamente
+y que el dominio esté apuntando a la carpeta correcta.
+
+¡JORLE FASHION STORE - MODA URBANA PREMIUM! 🛍️✨

@@ -1,0 +1,334 @@
+.store-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+}
+
+.store-modal {
+  position: relative;
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+.store-modal-close {
+  position: absolute;
+  top: var(--spacing-lg);
+  right: var(--spacing-lg);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  color: var(--color-gray-600);
+}
+
+.store-modal-close:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  transform: scale(1.05);
+}
+
+.store-modal-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 90vh;
+}
+
+/* Store Image */
+.store-image-container {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.store-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.store-badge {
+  position: absolute;
+  bottom: var(--spacing-lg);
+  left: var(--spacing-lg);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+  backdrop-filter: blur(10px);
+  color: var(--color-white);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  font-weight: var(--font-weight-semibold);
+  font-size: 1.125rem;
+}
+
+/* Store Info */
+.store-info {
+  padding: var(--spacing-xl);
+  overflow-y: auto;
+  flex: 1;
+}
+
+.store-title {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-black);
+  margin-bottom: var(--spacing-xs);
+}
+
+.store-location {
+  color: var(--color-gray-600);
+  font-size: 1rem;
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Store Details */
+.store-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.store-detail-item {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: flex-start;
+}
+
+.detail-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-gray-100);
+  border-radius: 50%;
+  color: var(--color-gray-600);
+  flex-shrink: 0;
+}
+
+.detail-content {
+  flex: 1;
+}
+
+.detail-content h4 {
+  font-size: 1rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-black);
+  margin-bottom: var(--spacing-xs);
+}
+
+.detail-content p {
+  color: var(--color-gray-600);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.phone-link {
+  background: none;
+  border: none;
+  color: var(--color-black);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  text-decoration: underline;
+  transition: var(--transition-fast);
+}
+
+.phone-link:hover {
+  color: var(--color-gray-700);
+}
+
+/* Action Buttons */
+.store-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.map-button,
+.call-button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: none;
+  border-radius: var(--radius-lg);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.map-button {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.map-button:hover {
+  background-color: var(--color-gray-800);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.call-button {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border: 1px solid var(--color-gray-300);
+}
+
+.call-button:hover {
+  background-color: var(--color-gray-100);
+  border-color: var(--color-gray-400);
+}
+
+/* Store Hours */
+.store-hours {
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+}
+
+.store-hours h4 {
+  font-size: 1rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-black);
+  margin-bottom: var(--spacing-md);
+}
+
+.hours-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.hours-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.hours-item span:first-child {
+  color: var(--color-gray-600);
+  font-weight: var(--font-weight-medium);
+}
+
+.hours-item span:last-child {
+  color: var(--color-black);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .store-modal-overlay {
+    padding: var(--spacing-md);
+  }
+  
+  .store-modal {
+    max-height: 95vh;
+  }
+  
+  .store-image-container {
+    height: 200px;
+  }
+  
+  .store-info {
+    padding: var(--spacing-lg);
+  }
+  
+  .store-title {
+    font-size: 1.25rem;
+  }
+  
+  .store-actions {
+    flex-direction: column;
+  }
+  
+  .hours-grid {
+    gap: var(--spacing-xs);
+  }
+  
+  .hours-item {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .store-modal-overlay {
+    padding: var(--spacing-sm);
+  }
+  
+  .store-modal-close {
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 36px;
+    height: 36px;
+  }
+  
+  .store-info {
+    padding: var(--spacing-md);
+  }
+  
+  .store-details {
+    gap: var(--spacing-md);
+  }
+  
+  .detail-icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .store-hours {
+    padding: var(--spacing-md);
+  }
+}
+
+/* Focus states */
+.store-modal-close:focus,
+.phone-link:focus,
+.map-button:focus,
+.call-button:focus {
+  outline: 2px solid var(--color-black);
+  outline-offset: 2px;
+}
+
+/* Scrollbar Styling */
+.store-info::-webkit-scrollbar {
+  width: 6px;
+}
+
+.store-info::-webkit-scrollbar-track {
+  background: var(--color-gray-100);
+  border-radius: 3px;
+}
+
+.store-info::-webkit-scrollbar-thumb {
+  background: var(--color-gray-400);
+  border-radius: 3px;
+}
+
+.store-info::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-500);
+}
