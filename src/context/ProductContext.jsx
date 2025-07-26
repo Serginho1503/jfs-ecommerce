@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react';
-import { mockApiCall } from '../api/mockApi';
 
 const ProductContext = createContext();
 
@@ -106,17 +105,45 @@ export const ProductProvider = ({ children }) => {
     dispatch({ type: 'SET_LOADING', payload: true });
 
     try {
-      // Preparar filtros para la API
-      const filters = {
-        search: state.searchTerm,
-        tiendas: state.filters.tiendas,
-        tallas: state.filters.tallas,
-        colores: state.filters.colores,
-        page: state.currentPage,
-        limit: 12
-      };
+      // Construir URL con parámetros
+      const params = new URLSearchParams();
+      
+      if (state.searchTerm) {
+        params.append('search', state.searchTerm);
+      }
+      
+      if (state.filters.tiendas.length > 0) {
+        state.filters.tiendas.forEach(tienda => {
+          params.append('tiendas[]', tienda);
+        });
+      }
+      
+      if (state.filters.tallas.length > 0) {
+        state.filters.tallas.forEach(talla => {
+          params.append('tallas[]', talla);
+        });
+      }
+      
+      if (state.filters.colores.length > 0) {
+        state.filters.colores.forEach(color => {
+          params.append('colores[]', color);
+        });
+      }
+      
+      params.append('page', state.currentPage);
+      params.append('limit', 12);
 
-      const data = await mockApiCall(filters);
+      const response = await fetch(`/api/products.php?${params.toString()}`);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      
+      if (!data.success) {
+        throw new Error(data.error || 'Error desconocido');
+      }
 
       dispatch({ type: 'SET_PRODUCTS', payload: data.products });
       dispatch({ 
